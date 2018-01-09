@@ -24,7 +24,8 @@ class DrawView: UIView {
         // Drawing code
         //createRectangle()
         //createTriangle()
-        createOval()
+        //createOval()
+        createCircle()
         
     }
     
@@ -67,6 +68,21 @@ class DrawView: UIView {
         path = UIBezierPath(ovalIn: self.bounds)
         
         UIColor.green.setFill()
+        path.fill()
+        
+        UIColor.red.setStroke()
+        path.stroke()
+    }
+    
+    func createCircle() {
+        
+        let radius = self.frame.size.width < self.frame.size.height ? self.frame.size.width/2 : self.frame.size.height/2
+        
+        let center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
+        
+        path = UIBezierPath(arcCenter: center, radius:radius , startAngle: 0, endAngle: 2*3.1416, clockwise: true)
+        
+        UIColor.yellow.setFill()
         path.fill()
         
         UIColor.red.setStroke()
