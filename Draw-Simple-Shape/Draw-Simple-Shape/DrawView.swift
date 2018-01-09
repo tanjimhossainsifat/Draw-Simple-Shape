@@ -22,9 +22,9 @@ class DrawView: UIView {
     }
     override func draw(_ rect: CGRect) {
         // Drawing code
-        //createRectangle()
-        //createTriangle()
-        //createOval()
+        createRectangle()
+        createOval()
+        createTriangle()
         createCircle()
         
     }
@@ -80,7 +80,7 @@ class DrawView: UIView {
         
         let center = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
         
-        path = UIBezierPath(arcCenter: center, radius:radius , startAngle: 0, endAngle: 2*3.1416, clockwise: true)
+        path = UIBezierPath(arcCenter: center, radius:radius , startAngle: 0, endAngle:CGFloat(2*Float.pi), clockwise: true)
         
         UIColor.yellow.setFill()
         path.fill()
