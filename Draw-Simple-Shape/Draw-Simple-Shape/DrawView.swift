@@ -23,7 +23,8 @@ class DrawView: UIView {
     override func draw(_ rect: CGRect) {
         // Drawing code
         //createRectangle()
-        createTriangle()
+        //createTriangle()
+        createOval()
         
     }
     
@@ -60,6 +61,16 @@ class DrawView: UIView {
         UIColor.red.setStroke()
         path.stroke()
         
+    }
+    
+    func createOval() {
+        path = UIBezierPath(ovalIn: self.bounds)
+        
+        UIColor.green.setFill()
+        path.fill()
+        
+        UIColor.red.setStroke()
+        path.stroke()
     }
 
 }
